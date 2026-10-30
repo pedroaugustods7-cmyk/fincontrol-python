@@ -1,0 +1,34 @@
+
+# Ambiente virtual do Python
+.venv/
+venv/
+env/
+
+# Cache e arquivos temporários do Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Bancos de dados locais
+*.db
+*.sqlite
+*.sqlite3
+
+# Backups
+backup/
+backups/
+
+# Variáveis de ambiente e senhas
+.env
+.env.*
+!.env.example
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Configurações locais do editor
+.vscode/
+
+# Logs
+*.log

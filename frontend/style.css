@@ -1,0 +1,742 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    color: #172b4d;
+    line-height: 1.6;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* MENU LATERAL */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #14243b;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.logo {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.sidebar-subtitle {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 45px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-link {
+    display: block;
+    padding: 13px 15px;
+    border-radius: 9px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    background: #253c59;
+    color: white;
+}
+
+.nav-link.active {
+    background: #2563eb;
+    color: white;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 30px;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 1600px;
+    padding: 35px 45px;
+    margin: 0 auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.page-header h1 {
+    font-size: 30px;
+}
+
+.page-header p {
+    color: #64748b;
+}
+
+.header-tag {
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 9px 16px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* SEÇÕES */
+
+section {
+    background: white;
+    border-radius: 15px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(20, 36, 59, 0.04);
+}
+
+section h2 {
+    font-size: 21px;
+    margin-bottom: 22px;
+}
+
+/* FILTRO DE PERÍODO */
+
+.filtro-mensal {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 22px 28px;
+}
+
+.filtro-mensal-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.filtro-mensal h2 {
+    margin-bottom: 4px;
+    font-size: 19px;
+}
+
+.filtro-mensal p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.filtro-periodo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filtro-periodo label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.filtro-periodo input {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-size: 14px;
+    background: #f8fafc;
+    color: #172b4d;
+    cursor: pointer;
+}
+
+.filtro-periodo input:focus {
+    outline: 2px solid #93c5fd;
+}
+
+#mensagem-periodo {
+    margin-top: 12px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* CARTÕES FINANCEIROS */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.finance-card {
+    padding: 25px;
+    border-radius: 13px;
+}
+
+.finance-card h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.finance-card p {
+    font-size: 27px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.receita-card {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.despesa-card {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.saldo-card {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* GRÁFICOS */
+
+.graficos-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.grafico-card {
+    min-width: 0;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 22px;
+    min-height: 310px;
+}
+
+.grafico-card h3 {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+#grafico-resumo,
+#grafico-categorias {
+    position: relative;
+    width: 100%;
+    height: 250px;
+}
+
+#grafico-resumo canvas,
+#grafico-categorias canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#sem-despesas:not([hidden]) {
+    color: #64748b;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+/* FORMULÁRIO */
+
+#form-transacao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+#form-transacao input,
+#form-transacao select {
+    flex: 1;
+    min-width: 140px;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-size: 15px;
+    background: white;
+}
+
+#form-transacao input:focus,
+#form-transacao select:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+/* BOTÕES */
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 17px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.acoes-transacao {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.botao-editar {
+    background: #f59e0b;
+}
+
+.botao-editar:hover {
+    background: #d97706;
+}
+
+.botao-excluir {
+    background: #dc2626;
+}
+
+.botao-excluir:hover {
+    background: #b91c1c;
+}
+
+/* PESQUISA E FILTROS DA TABELA */
+
+.filtros-transacoes {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filtros-transacoes input,
+.filtros-transacoes select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    min-width: 160px;
+}
+
+.filtros-transacoes input {
+    flex: 2;
+}
+
+.filtros-transacoes select {
+    flex: 1;
+}
+
+.filtros-transacoes input:focus,
+.filtros-transacoes select:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+/* TABELA */
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabela-transacoes {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-transacoes th {
+    background: #f8fafc;
+    padding: 15px;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabela-transacoes td {
+    padding: 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabela-transacoes tbody tr:hover {
+    background: #f8fafc;
+}
+
+.tabela-transacoes td:last-child {
+    white-space: nowrap;
+}
+
+.valor-receita {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.valor-despesa {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1100px) {
+    .main-content {
+        padding: 25px;
+    }
+
+    .cards-container {
+        gap: 12px;
+    }
+
+    .finance-card {
+        padding: 18px;
+    }
+
+    .finance-card p {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 800px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-subtitle,
+    .sidebar-footer {
+        display: none;
+    }
+
+    .cards-container,
+    .graficos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        flex-wrap: wrap;
+    }
+
+    .main-content {
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .filtro-mensal-conteudo {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filtro-periodo {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .filtro-periodo input {
+        width: 100%;
+    }
+
+    .filtros-transacoes {
+        flex-direction: column;
+    }
+
+    .filtros-transacoes input,
+    .filtros-transacoes select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    section {
+        padding: 18px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    #form-transacao {
+        flex-direction: column;
+    }
+
+    #form-transacao input,
+    #form-transacao select,
+    #form-transacao button {
+        width: 100%;
+    }
+}
+
+/* Atalhos de períodos */
+
+.atalhos-periodo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.atalhos-periodo button {
+    background: #eaf1ff;
+    color: #1d4ed8;
+    border: 1px solid #dbeafe;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.atalhos-periodo button:hover {
+    background: #dbeafe;
+}
+
+.atalhos-periodo button.ativo {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+
+/* Gráfico de evolução financeira */
+
+.descricao-evolucao {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.grafico-evolucao-container {
+    position: relative;
+    width: 100%;
+    height: 320px;
+}
+
+@media (max-width: 650px) {
+    .grafico-evolucao-container {
+        height: 260px;
+    }
+}
+
+
+/* =================================
+   EXPORTAÇÃO DE TRANSAÇÕES
+================================= */
+
+.cabecalho-transacoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.cabecalho-transacoes h2 {
+    margin-bottom: 0;
+}
+
+#btn-exportar-csv {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#btn-exportar-csv:hover {
+    background: #15803d;
+}
+
+@media (max-width: 650px) {
+    .cabecalho-transacoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #btn-exportar-csv {
+        width: 100%;
+    }
+}
+
+/* =================================
+   JANELA PROFISSIONAL DE EDIÇÃO
+================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Manter o modal oculto quando necessário */
+.modal-overlay[hidden] {
+    display: none;
+}
+
+.modal-conteudo {
+    background: #ffffff;
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.modal-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.modal-cabecalho h2 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.modal-fechar {
+    background: transparent;
+    color: #64748b;
+    font-size: 28px;
+    padding: 0 6px;
+}
+
+.modal-fechar:hover {
+    background: #f1f5f9;
+    color: #172b4d;
+}
+
+.modal-descricao {
+    color: #64748b;
+    margin: 10px 0 25px;
+    font-size: 14px;
+}
+
+.modal-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.modal-campo label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.modal-campo input,
+.modal-campo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font-size: 15px;
+    background: white;
+    color: #172b4d;
+}
+
+.modal-campo input:focus,
+.modal-campo select:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 15px;
+}
+
+.modal-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.modal-cancelar {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.modal-cancelar:hover {
+    background: #cbd5e1;
+}
+
+.modal-salvar {
+    background: #2563eb;
+}
+
+.modal-salvar:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 550px) {
+    .modal-conteudo {
+        padding: 20px;
+    }
+
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-acoes {
+        flex-direction: column-reverse;
+    }
+
+    .modal-acoes button {
+        width: 100%;
+    }
+}
